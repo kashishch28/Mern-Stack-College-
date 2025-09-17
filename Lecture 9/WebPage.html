@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffe5e5;
+            color: #6b2f4f;
+        }
+        .scroll-mt-24 {
+            scroll-margin-top: 6rem;
+        }
+        .hero-bg {
+            background-image: url('home.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+            height: 100vh;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="text-[#6b2f4f] bg-[#ffe5e5]">
+
+    <nav class="bg-[#ffc0cb] shadow-lg fixed w-full z-50 transition-colors duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-[#9c2f62] tracking-wider">K's Bakery</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="hover:text-[#9c2f62] transition-colors duration-300 font-semibold">Home</a>
+                <a href="#products" class="hover:text-[#9c2f62] transition-colors duration-300 font-semibold">Products</a>
+                <a href="#gifts" class="hover:text-[#9c2f62] transition-colors duration-300 font-semibold">Gifts</a>
+                <a href="#about" class="hover:text-[#9c2f62] transition-colors duration-300 font-semibold">About Us</a>
+                <a href="#location" class="hover:text-[#9c2f62] transition-colors duration-300 font-semibold">Location</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#ffc0cb] transition-all duration-300 ease-in-out">
+            <div class="px-6 py-4 flex flex-col space-y-4">
+                <a href="#home" class="block hover:bg-[#ff80a0] py-2 px-4 rounded-md font-semibold">Home</a>
+                <a href="#products" class="block hover:bg-[#ff80a0] py-2 px-4 rounded-md font-semibold">Products</a>
+                <a href="#gifts" class="block hover:bg-[#ff80a0] py-2 px-4 rounded-md font-semibold">Gifts</a>
+                <a href="#about" class="block hover:bg-[#ff80a0] py-2 px-4 rounded-md font-semibold">About Us</a>
+                <a href="#location" class="block hover:bg-[#ff80a0] py-2 px-4 rounded-md font-semibold">Location</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24">
+        <section id="home" class="hero-bg py-20 md:py-32 rounded-b-3xl shadow-xl transition-all duration-300">
+            <div class="absolute inset-0 bg-[#ffe5e5] opacity-60 rounded-b-3xl"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-[#9c2f62] leading-tight mb-4 animate-fade-in">Freshly Baked, Just for You.</h1>
+                <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-8 animate-fade-in-up">Indulge in our exquisite collection of handcrafted pastries, cakes, and breads. Every bite tells a story of passion and tradition.</p>
+                <div class="flex justify-center">
+                    <a href="#products" class="bg-[#ff80a0] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#ff6992] transition-all duration-300 transform hover:scale-105">Browse Our Menu</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="container mx-auto px-6 py-20 scroll-mt-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">Our Delicious Treats</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl shadow-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="pastery.jpeg" alt="Assorted pastries" class="rounded-2xl mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-bold mb-2 text-center">Assorted Pastries</h3>
+                    <p class="text-center mb-4">A delightful selection of flaky croissants, Danish pastries, and more.</p>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-[#ff80a0]">$8.50</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl shadow-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="layercake.jpeg" alt="Chocolate layer cake" class="rounded-2xl mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-bold mb-2 text-center">Decadent Chocolate Cake</h3>
+                    <p class="text-center mb-4">Rich, moist chocolate cake with smooth chocolate ganache frosting.</p>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-[#ff80a0]">$35.00</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl shadow-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="artisan_bread.jpeg" alt="Fresh artisan bread" class="rounded-2xl mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-bold mb-2 text-center">Artisan Sourdough Loaf</h3>
+                    <p class="text-center mb-4">A perfect crust and a soft, tangy interior. Ideal for any meal.</p>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-[#ff80a0]">$7.00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gifts" class="container mx-auto px-6 py-20 scroll-mt-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">Special Gifts</h2>
+            <p class="text-center text-lg mb-8 max-w-2xl mx-auto">Make any occasion memorable with our specially curated gift packages. Choose from a delightful combination of our finest cakes, fresh flowers, and premium chocolates for that perfect surprise.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl shadow-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="sp1.jpeg" alt="Cake and flowers gift set" class="rounded-2xl mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-bold mb-2 text-center">Celebration Combo</h3>
+                    <p class="text-center mb-4">A custom-designed cake paired with a beautiful bouquet of fresh roses.</p>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-[#ff80a0]">Starting at $65</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl shadow-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="sp2.jpeg" alt="Pastry and chocolates gift set" class="rounded-2xl mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-bold mb-2 text-center">Sweet Indulgence</h3>
+                    <p class="text-center mb-4">A box of our assorted pastries with a selection of artisan chocolates.</p>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-[#ff80a0]">Starting at $45</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl shadow-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="sp3.jpeg" alt="Custom gift basket" class="rounded-2xl mb-4 w-full h-auto">
+                    <h3 class="text-2xl font-bold mb-2 text-center">Create Your Own</h3>
+                    <p class="text-center mb-4">Mix and match any of our products to build a personalized gift basket.</p>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-[#ff80a0]">Price Varies</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-[#ff80a0] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#ff6992] transition-all duration-300 transform hover:scale-105">Place a Special Order</a>
+            </div>
+        </section>
+
+        <section class="bg-[#ff80a0] text-white py-16 md:py-20 rounded-3xl mx-6 shadow-2xl transition-all duration-300">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Limited-Time Offer!</h2>
+                <p class="text-xl md:text-2xl mb-8">Get **20% off** your entire order with the code: **FLURYS20**</p>
+                <a href="#products" class="bg-white text-[#ff80a0] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#ffe5e5] transition-all duration-300 transform hover:scale-105">Shop Now!</a>
+            </div>
+        </section>
+
+        <section id="about" class="container mx-auto px-6 py-20 scroll-mt-24">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="lg:w-1/2">
+                    <img src="team.jpeg" alt="A team baking in the kitchen" class="rounded-3xl shadow-xl w-full h-auto">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Story</h2>
+                    <p class="text-lg mb-4">K's Bakery was born from a simple passion: to bring joy through baking. For over two decades, we've dedicated ourselves to the art of creating delicious, handcrafted goods using time-honored techniques and the finest, freshest ingredients.</p>
+                    <p class="text-lg">From our signature sourdough to our beautifully decorated cakes, every creation is a labor of love. We believe in the magic of a warm, fresh treat and are committed to serving our community with a taste of pure delight.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="container mx-auto px-6 py-20 scroll-mt-24">
+            <div class="bg-[#f8d4e4] rounded-3xl shadow-xl p-8 flex flex-col items-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center">Find a Location</h2>
+                <p class="text-lg text-center mb-6 max-w-2xl">Let us help you find the nearest Flurys Bakery to you, so you can enjoy our treats fresh from the oven.</p>
+                <div class="w-full max-w-lg mb-6 flex flex-col sm:flex-row gap-4">
+                    <button id="currentLocationBtn" class="bg-[#ff80a0] text-white font-medium py-4 px-8 rounded-full hover:bg-[#ff6992] transition-colors duration-300 shadow-md flex-grow">Use My Current Location</button>
+                    <input type="text" id="manualLocationInput" placeholder="Or enter a city/zip code" class="w-full p-4 rounded-full border border-pink-200 focus:ring-pink-500 focus:border-pink-500 transition-colors duration-300">
+                </div>
+                <div class="mt-4 text-center">
+                    <p>Your selected location:</p>
+                    <strong id="locationDisplay" class="text-2xl font-bold mt-2 text-[#ff80a0]">Not set</strong>
+                </div>
+                <div id="messageBox" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center p-4">
+                    <div class="bg-white rounded-xl shadow-2xl p-6 max-w-sm w-full text-center transform scale-95 transition-transform duration-300 ease-in-out" id="messageBoxContent">
+                        <p id="messageText" class="text-lg font-medium mb-4">This is a message.</p>
+                        <button id="closeMessageBox" class="bg-[#ff80a0] text-white py-2 px-6 rounded-full hover:bg-[#ff6992] transition-colors duration-200">OK</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-white shadow-inner mt-12 py-8 rounded-t-3xl transition-all duration-300">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 K's Bakery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const currentLocationBtn = document.getElementById('currentLocationBtn');
+        const locationDisplay = document.getElementById('locationDisplay');
+        const manualLocationInput = document.getElementById('manualLocationInput');
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
+        const closeMessageBox = document.getElementById('closeMessageBox');
+
+        function showMessageBox(message) {
+            messageText.textContent = message;
+            messageBox.classList.remove('hidden');
+            messageBox.classList.add('flex');
+            document.getElementById('messageBoxContent').classList.remove('scale-95');
+            document.getElementById('messageBoxContent').classList.add('scale-100');
+        }
+
+        closeMessageBox.addEventListener('click', () => {
+            document.getElementById('messageBoxContent').classList.remove('scale-100');
+            document.getElementById('messageBoxContent').classList.add('scale-95');
+            setTimeout(() => {
+                messageBox.classList.remove('flex');
+                messageBox.classList.add('hidden');
+            }, 300);
+        });
+
+        mobileMenuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        currentLocationBtn.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                locationDisplay.textContent = 'Detecting...';
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        locationDisplay.textContent = `Lat: ${lat.toFixed(2)}, Lon: ${lon.toFixed(2)}`;
+                    },
+                    (error) => {
+                        showMessageBox('Location not available. Please ensure your browser has location permissions enabled.');
+                        locationDisplay.textContent = 'Not set';
+                        console.error('Geolocation Error:', error);
+                    }
+                );
+            } else {
+                showMessageBox('Geolocation is not supported by your browser.');
+                locationDisplay.textContent = 'Not set';
+            }
+        });
+
+        manualLocationInput.addEventListener('input', (event) => {
+            locationDisplay.textContent = event.target.value || 'Not set';
+        });
+    </script>
+</body>
+</html>
